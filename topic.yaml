@@ -1,0 +1,23 @@
+﻿AWSTemplateFormatVersion: 2010-09-09
+
+Resources:
+  Topic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName:
+        Fn::Join:
+          - "-"
+          - - test-topic
+            - Fn::Select:
+                - 4
+                - Fn::Split:
+                    - "-"
+                    - Fn::Select:
+                        - 2
+                        - Fn::Split:
+                            - /
+                            - Ref: AWS::StackId
+
+Outputs:
+  TopicArn:
+    Value: !Ref Topic
