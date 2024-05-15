@@ -1,4 +1,10 @@
-﻿AWSTemplateFormatVersion: 2010-09-09
+# 添付のSNSトピックを作成するCloudFormationテンプレートを改造して、トピック作成とともに、配信ステータスのログ記録の有効化するようにしてください。
+# AWSコンソール上で、以下のようになっていればOKです。
+# なお、配信ステータスのログ記録の有効化はCloudFomationではサポートされていないため、CloudFormationでカスタムリソースを作成して、SDKで有効化する必要があります。
+ 
+
+ 
+ AWSTemplateFormatVersion: 2010-09-09
 
 Resources:
   Topic:
